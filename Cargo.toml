@@ -3,4 +3,17 @@ name = "newsletter"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "newsletter"
+path = "src/lib.rs"
+
+[[bin]]
+name = "newsletter"
+path = "src/main.rs"
+
 [dependencies]
+axum = { version = "0.8.4", features = ["macros"] }
+tokio = { version = "1.44.2", features = ["macros", "rt-multi-thread"] }
+
+[dev-dependencies]
+reqwest = "0.12.15"
