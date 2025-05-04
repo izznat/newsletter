@@ -85,9 +85,9 @@ jobs:
         with:
           tool: cargo-nextest
       - name: Generate code coverage
-        run: cargo llvm-cov nextest --ignore-filename-regex src/main.rs$ --all-features --workspace --lcov --output-path lcov.info
+        run: cargo llvm-cov nextest --ignore-filename-regex src/main.rs --lcov --output-path lcov.info
       - name: Generate report
-        run: cargo llvm-cov report --ignore-filename-regex src/main.rs$ --html --output-dir coverage
+        run: cargo llvm-cov report --ignore-filename-regex src/main.rs --html --output-dir coverage
       - uses: actions/upload-artifact@v4
         with:
           name: "Coverage report"
